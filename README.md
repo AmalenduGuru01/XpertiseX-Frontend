@@ -24,7 +24,7 @@ The API design of XpertiseX follows RESTful principles, implemented using NodeJS
 
 ## Deployment
 
-Deployment of XpertiseX involves hosting the front end on Vercel for fast and scalable static site hosting. The back end is hosted on Render or Railway, cloud-based platforms for Node.js applications, ensuring reliability and scalability. Media files are managed on Cloudinary, while MongoDB Atlas provides a secure and managed database environment.
+Deployment of XpertiseX involves hosting the front end on Vercel for fast and scalable static site hosting. The back end is hosted on Render, cloud-based platforms for Node.js applications, ensuring reliability and scalability. Media files are managed on Cloudinary, while MongoDB Atlas provides a secure and managed database environment.
 
 
 ## Live Link 
