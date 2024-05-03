@@ -6,6 +6,8 @@ import { setUser } from "../../slices/profileSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
 
+
+
 const {
   SENDOTP_API,
   SIGNUP_API,
@@ -145,7 +147,7 @@ export function logout(navigate) {
 
 
 
-export function getPasswordResetToken(email , setEmailSent) {
+export function getPasswordResetToken(email , setEmailSent, navigate) {
   return async(dispatch) => {
     dispatch(setLoading(true));
     try{
@@ -159,6 +161,9 @@ export function getPasswordResetToken(email , setEmailSent) {
 
       toast.success("Reset Email Sent");
       setEmailSent(true);
+      // navigate(`${response.data.url}`)
+      // window.location.href =`${response.data.url}`;
+      // navigate("/verify-email")
     }
     catch(error) {
       console.log("RESET PASSWORD TOKEN Error", error);

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { BiArrowBack } from "react-icons/bi"
 import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import { Link ,useNavigate} from "react-router-dom"
 
 import { getPasswordResetToken } from "../services/operations/authAPI"
 
@@ -10,12 +10,12 @@ function ForgotPassword() {
   const [emailSent, setEmailSent] = useState(false)
   const dispatch = useDispatch()
   const { loading } = useSelector((state) => state.auth)
+  const navigate = useNavigate();
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    dispatch(getPasswordResetToken(email, setEmailSent))
+    dispatch(getPasswordResetToken(email, setEmailSent, navigate))
   }
-
   return (
     <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
       {loading ? (
@@ -51,7 +51,7 @@ function ForgotPassword() {
               type="submit"
               className="mt-6 w-full rounded-[8px] bg-yellow-50 py-[12px] px-[12px] font-medium text-richblack-900"
             >
-              {!emailSent ? "Sumbit" : "Resend Email"}
+              {!emailSent ? "Submit" : "Resend Email"}
             </button>
           </form>
           <div className="mt-6 flex items-center justify-between">

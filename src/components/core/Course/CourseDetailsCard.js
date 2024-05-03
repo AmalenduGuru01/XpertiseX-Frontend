@@ -72,6 +72,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
           </div>
           <div className="flex flex-col gap-4">
             <button
+              id = "buynow"
               className="yellowButton"
               onClick={
                 user && course?.studentsEnrolled.includes(user?._id)
@@ -84,7 +85,7 @@ function CourseDetailsCard({ course, setConfirmationModal, handleBuyCourse }) {
                 : "Buy Now"}
             </button>
             {(!user || !course?.studentsEnrolled.includes(user?._id)) && (
-              <button onClick={handleAddToCart} className="blackButton">
+              <button onClick={handleAddToCart} id="addToCart" className="blackButton">
                 Add to Cart
               </button>
             )}
