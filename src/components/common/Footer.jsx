@@ -173,7 +173,7 @@ const Footer = () => {
           </div>
 
           <div className="text-center">
-            Made with ❤️ by Amalendu © 2024 XpertiseX
+            Made with ❤️ by Amalendu and Vedant © 2024 XpertiseX
           </div>
         </div>
       </div>
